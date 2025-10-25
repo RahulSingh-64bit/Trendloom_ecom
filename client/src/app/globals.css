@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Body text */
+body {
+  font-family: var(--font-roboto), sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-lobster-two), cursive;
+}
+
+.trendloom-font {
+  font-family: "Rajdhani";
+  font-weight: 500;
+  
+}

@@ -130,15 +130,27 @@ const CardList = ({title}:{title:string}) => {
             {title === "Popular Products" ? popularProducts.map(item =>
                 <Card key={item.id} className="flex flex-row items-center justify-between gap-4 p-4">
                     <div className="rounded-sm w-12 h-12 overflow-hidden relative">
+                        <Image src={Object.values(item.images) [0] || ""} alt={item.name} fill className="object-cover"/>
+                    </div>
+                    <CardContent className="flex-1 p-0">
+                        <CardTitle className="text-sm font-medium"> {item.name} </CardTitle>
+                        
+                    </CardContent>
+                            <CardFooter className="p-0">${item.price}k</CardFooter>
+                </Card>
+            ) :  latestTransactions.map((item) => (
+              <Card key={item.id} className="flex flex-row items-center justify-between gap-4 p-4">
+                    <div className="rounded-sm w-12 h-12 overflow-hidden relative">
                         <Image src={item.image} alt={item.title} fill className="object-cover"/>
                     </div>
                     <CardContent className="flex-1 p-0">
                         <CardTitle className="text-sm font-medium"> {item.title} </CardTitle>
-                        <Badge variant="secondary">{item.badge}</Badge>
+                        <Badge variant={"secondary"}>{item.badge}</Badge>
+                        
                     </CardContent>
-                            <CardFooter className="p-0">{item.count/1000}k</CardFooter>
+                            <CardFooter className="p-0">${item.count /1000}k</CardFooter>
                 </Card>
-            )}
+            )) }
         </div>
     </div>
   )

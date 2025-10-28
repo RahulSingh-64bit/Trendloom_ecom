@@ -21,7 +21,7 @@ const Homepage = () => {
         <AppAreaChart />
       </div>
       <div className="bg-primary-foreground rounded-lg p-4">
-        <CardList title="Popular Content" />
+        <CardList title="Popular Products" />
       </div>
     </div>
   );

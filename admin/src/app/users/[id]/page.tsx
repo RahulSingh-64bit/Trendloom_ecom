@@ -110,6 +110,19 @@ const SingleUserPage = () => {
               </HoverCard>
             </div>
           </div>
+          {/* User Card container */}
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-2">
+              <Avatar className="size-12">
+                <AvatarImage src="https://images.unsplash.com/photo-1728577740843-5f29c7586afe?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                <AvatarFallback>JD</AvatarFallback>
+              </Avatar>
+              <h1 className="text-xl font-semibold">John Doe</h1>
+            </div>
+            <div className="text-sm text-muted-foreground">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem ut aliquam pariatur provident, totam aspernatur consequatur accusantium odio eveniet impedit maiores modi sit, adipisci quisquam repellendus dolore nemo itaque.</p>
+            </div>
+          </div>
           {/* Information container */}
           <div className="bg-primary-foreground p-4 rounded-lg">
             <div className="flex items-center justify-between">
@@ -129,51 +142,37 @@ const SingleUserPage = () => {
                 <Progress value={70} />
               </div>
               <div className="flex items-center gap-2">
-                <span className="font-bold">Username:</span>
-                <span>john.doe</span>
+                <span className="font-bold">Full name:</span>
+                <span>John Doe</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-bold">Email:</span>
-                <span>johndoe@gmail.com</span>
+                <span>john.doe@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-bold">Phone:</span>
                 <span>+1 234 5678</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="font-bold">Location:</span>
-                <span>New York, NY</span>
+                <span className="font-bold">Address:</span>
+                <span>123 Main St</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="font-bold">Role:</span>
-                <Badge>Admin</Badge>
+                <span className="font-bold">City:</span>
+                <span>New York</span>
               </div>
+              
             </div>
             <p className="text-sm text-muted-foreground mt-4">
               Joined on 2025.01.01
             </p>
           </div>
-          {/* Card List container */}
-          <div className="bg-primary-foreground p-4 rounded-lg">
-            <CardList title="Recent Transactions" />
-          </div>
+          
         </div>
 
         {/* Right */}
         <div className="w-full xl:w-2/3 space-y-6">
-          {/* User Card container */}
-          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
-            <div className="flex items-center gap-2">
-              <Avatar className="size-12">
-                <AvatarImage src="https://images.unsplash.com/photo-1728577740843-5f29c7586afe?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-                <AvatarFallback>JD</AvatarFallback>
-              </Avatar>
-              <h1 className="text-xl font-semibold">John Doe</h1>
-            </div>
-            <div className="text-sm text-muted-foreground">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quidem ut aliquam pariatur provident, totam aspernatur consequatur accusantium odio eveniet impedit maiores modi sit, adipisci quisquam repellendus dolore nemo itaque.</p>
-            </div>
-          </div>
+          
           {/* Chart container */}
           <div className="bg-primary-foreground p-4 rounded-lg">
             <h1 className="text-xl font-semibold">User Activity</h1>

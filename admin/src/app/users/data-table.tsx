@@ -57,7 +57,7 @@ export function DataTable<TData, TValue>({
       {Object.keys(rowSelection).length> 0 && <div className="flex justify-end">
         <Button className="flex items-center gap-2 bg-red-500 text-white px-2 py-1 text-sm rounded-md m-4 cursor-pointer">
           <Trash2 className="w-4 h-4"/>
-          Delete Payment(s)
+          Delete User(s)
           </Button></div>}
       <Table>
         <TableHeader>

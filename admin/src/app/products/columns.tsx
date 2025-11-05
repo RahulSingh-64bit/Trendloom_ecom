@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,9 +12,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
-import { Checkbox } from "@/components/ui/checkbox";
-import Link from "next/link";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export type Product = {
   id: string | number;
@@ -40,22 +40,28 @@ export const columns: ColumnDef<Product>[] = [
       />
     ),
     cell: ({ row }) => (
-      <Checkbox onCheckedChange={(value) => row.toggleSelected(!!value)} 
-      checked={row.getIsSelected()}/>
+      <Checkbox
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        checked={row.getIsSelected()}
+      />
     ),
   },
-
   {
     accessorKey: "image",
     header: "Image",
-    cell:({row}) =>{
-          const Product = row.original;
-          return(
-            <div className="w-9 h-9 relative">
-              <Image src={Product.images[Product.colors[0]]} alt={Product.name} fill className="rounded-full object-cover"/>
-            </div>
-          )
-        }
+    cell: ({ row }) => {
+      const product = row.original;
+      return (
+        <div className="w-9 h-9 relative">
+          <Image
+            src={product.images[product.colors[0]]}
+            alt={product.name}
+            fill
+            className="rounded-full object-cover"
+          />
+        </div>
+      );
+    },
   },
   {
     accessorKey: "name",
@@ -75,11 +81,9 @@ export const columns: ColumnDef<Product>[] = [
       );
     },
   },
-  
   {
     accessorKey: "shortDescription",
     header: "Description",
-
   },
   {
     id: "actions",
@@ -102,7 +106,9 @@ export const columns: ColumnDef<Product>[] = [
               Copy product ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem><Link href={`/products/${product.id}`}>View Product</Link></DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href={`/products/${product.id}`}>View customer</Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );

@@ -259,16 +259,15 @@ const getData = async (): Promise<User[]> => {
 };
 
 const UsersPage = async () => {
-  const data = await getData()
-    return (
-    
-    <div className="mb-4">
-        <div className="mb-8 px-4 py-2 bg-secondary rounded-md">
-            <div className="font-semibold">All Userss</div>
-        </div>
-      <DataTable columns={columns} data={data}/>  
+  const data = await getData();
+  return (
+    <div className="">
+      <div className="mb-8 px-4 py-2 bg-secondary rounded-md">
+        <h1 className="font-semibold">All Users</h1>
+      </div>
+      <DataTable columns={columns} data={data} />
     </div>
-  )
-}
+  );
+};
 
-export default UsersPage
+export default UsersPage;

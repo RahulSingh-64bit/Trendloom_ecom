@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,9 +12,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
-import { Checkbox } from "@/components/ui/checkbox";
-import Link from "next/link";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export type User = {
   id: string;
@@ -37,22 +37,28 @@ export const columns: ColumnDef<User>[] = [
       />
     ),
     cell: ({ row }) => (
-      <Checkbox onCheckedChange={(value) => row.toggleSelected(!!value)} 
-      checked={row.getIsSelected()}/>
+      <Checkbox
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        checked={row.getIsSelected()}
+      />
     ),
   },
-
   {
     accessorKey: "avatar",
     header: "Avatar",
-    cell:({row}) =>{
+    cell: ({ row }) => {
       const user = row.original;
-      return(
+      return (
         <div className="w-9 h-9 relative">
-          <Image src={user.avatar} alt={user.fullName} fill className="rounded-full object-cover"/>
+          <Image
+            src={user.avatar}
+            alt={user.fullName}
+            fill
+            className="rounded-full object-cover"
+          />
         </div>
-      )
-    }
+      );
+    },
   },
   {
     accessorKey: "fullName",
@@ -91,7 +97,6 @@ export const columns: ColumnDef<User>[] = [
       );
     },
   },
-
   {
     id: "actions",
     cell: ({ row }) => {
@@ -110,11 +115,12 @@ export const columns: ColumnDef<User>[] = [
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(user.id)}
             >
-              Copy User ID
+              Copy user ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem><Link href={`/users/${user.id}`}>View Customer</Link></DropdownMenuItem>
-            
+            <DropdownMenuItem>
+              <Link href={`/users/${user.id}`}>View customer</Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );

@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import { ColumnDef } from "@tanstack/react-table";
-import { Checkbox } from "@/components/ui/checkbox";
+import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 import Link from "next/link";
 
 export type Payment = {
@@ -37,11 +37,12 @@ export const columns: ColumnDef<Payment>[] = [
       />
     ),
     cell: ({ row }) => (
-      <Checkbox onCheckedChange={(value) => row.toggleSelected(!!value)} 
-      checked={row.getIsSelected()}/>
+      <Checkbox
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        checked={row.getIsSelected()}
+      />
     ),
   },
-
   {
     accessorKey: "fullName",
     header: "User",
@@ -93,7 +94,6 @@ export const columns: ColumnDef<Payment>[] = [
       return <div className="text-right font-medium">{formatted}</div>;
     },
   },
-
   {
     id: "actions",
     cell: ({ row }) => {
@@ -115,7 +115,9 @@ export const columns: ColumnDef<Payment>[] = [
               Copy payment ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem><Link href={`/users/${payment.userId}`}>View Customer</Link></DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href={`/users/${payment.userId}`}>View customer</Link>
+            </DropdownMenuItem>
             <DropdownMenuItem>View payment details</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

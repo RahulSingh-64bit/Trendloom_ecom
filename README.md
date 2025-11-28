@@ -1,4 +1,4 @@
-# 🛍️ Trendloom — E-Commerce App  (CLIENT + ADMIN)
+# 🛍️ Trendloom — E-Commerce App  (CLIENT + ADMIN) in progress
 
 A modern, responsive e-commerce web application built with **Next.js 15**, **Tailwind CSS**, and **TypeScript**. This project focuses on crafting a sleek shopping experience and a robust admin dashboard UI. It’s the design phase of a full-stack application, ideal for developers looking to master frontend architecture and reusable component workflows.
 
